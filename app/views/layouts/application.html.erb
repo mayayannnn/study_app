@@ -8,8 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
-
   <body>
+    <header class="header">
+      <ul>
+      <li class="li" >home</li>
+      <li class="li" >board</li>
+      <li class="li" >study</li>
+      </ul>
+    </header>
+    
     <%= yield %>
   </body>
 </html>
