@@ -1,16 +1,22 @@
 .header{
     height: 100%;
     width: 100%;
-    background:blue;
-    padding-top : 1%; /*　要素の大きさ(上)　*/
+    background-color:rgba(90, 167, 237, 1);
+
     display: flex;
-    align-items: left;
     margin: 0%;
+    
 }
 .li{
-    margin-left: 300px;
-    font-size:180%;
+    
+    margin-left: 20px;
+    font-size: 140%;
+    font-weight: bold;
     color: white;
     float:left; /* 横並び　*/
     list-style: none; /* ぽつ消し*/
+}
+.board_main_h1{
+    margin-left:10px;
+    color:black;
 }
