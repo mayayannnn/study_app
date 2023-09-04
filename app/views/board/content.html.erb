@@ -1,5 +1,5 @@
 <div>
-    <h1>算数学</h1>
+    <h1><%= @title %></h1>
 </div>
 <br>
 <input type="button" class="btn btn-warning" value="解決済み">
@@ -8,32 +8,24 @@
 
 <input type="button" class="btn btn-success" value="問題">
 <br>
-<table class="table table-striped">
+  <table class="table table-striped">
     <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">id</th>
+          <th scope="col">content</th>
+          <th scope="col">subject</th>
+          <th>答える</th>
         </tr>
       </thead>
       <tbody>
+        <% @borads.each do |borad| %>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          
+          <td scope="row"><%= borad.id %></td>
+          <td><%= borad.content %></td>
+          <td><%= borad.subject %></td>
+          <td><a href="#">答える</a></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        <%end%>
       </tbody>
   </table>
