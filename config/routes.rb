@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'ai_question/home'
+  get "/signup" => "home#signup"
+  get "/home" => "home#home"
+  post "/create_user" => "home#create_user"
 
   get '/' => "board#home"
   get "/add_ask_question" => "board#add_ask_question"
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   post "/create_question" => "board#create_question"
   get "/content/:id/question" => "board#content_question"
 
+  get 'ai_question/home'
   get "/ai_question" => "ai_question#home"
   get "/question_for_ai" => "ai_question#question_for_ai"
   

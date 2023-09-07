@@ -1,0 +1,9 @@
+<h1>新規</h1>
+<%= form_tag("/create_user") do %>
+<p>名前</p>
+<input name="name" required>
+<p>email</p>
+<input name="email" required>
+<br>
+<input type="submit" value="新規">
+<%end%>
