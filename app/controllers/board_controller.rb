@@ -43,14 +43,17 @@ class BoardController < ApplicationController
   end
   def create
     @content = Board.new(content:params[:content],
-                         subject:params[:subject])
+                         subject:params[:subject],
+                         grade:params[:grade]
+                         )
     @content.save
     redirect_to("/")
   end
   def create_question
     @content = Question.new(content:params[:content],
                             subject:params[:subject],
-                            answer:params[:answer])
+                            answer:params[:answer],
+                            grade:params[:grade])
     @content.save
     redirect_to("/")
   end

@@ -1,40 +1,34 @@
-<h1>学年</h1>
-<ul class="nav justify-content-center">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">中一</a>
-    </li>
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">中二</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">中三</a>
-    </li>
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">高一</a>
-    </li>  
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">高二</a>
-    </li>
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">高三</a>
-    </li>
-    </ul>
-<h1>教科</h1>
-<ul class="nav justify-content-center">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">数学</a>
-    </li>
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">国語</a>
-    </li>
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">理科</a>
-    </li>
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">社会</a>
-    </li>  
-    <li  class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">英語</a>
-    </li>
-    </ul>
-<a href="/question_for_ai">飛ぶ</a>
+<%= form_tag("/question_for_ai") do %>
+<select class="form-select" aria-label="Default select example" name="grade">
+    <option selected disabled>学年</option>
+    <option value="中一">中一</option>
+    <option value="中二">中二</option>
+    <option value="中三">中三</option>
+    <option value="高一">高一</option>
+    <option value="高二">高二</option>
+    <option value="高三">高三</option>
+  </select>
+
+  <select class="form-select" aria-label="Default select example" name="subject">
+    <option selected disabled>教科</option>
+    <option value="数学">数学</option>
+    <option value="国語">国語</option>
+    <option value="理科">理科</option>
+    <option value="社会">社会</option>
+    <option value="英語">英語</option>
+    <option value="情報">情報</option>
+  </select>
+
+  <div class="form-floating">
+    <textarea name="content" id="ai_question" cols="10" rows="30"class="form-control"></textarea>
+    <label for="ai_question">出して欲しい問題を入力</label>
+</div>
+
+<select class="form-select" aria-label="Default select example" name="number">
+    <option selected disabled>出題数</option>
+    <option value="3">3</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+  </select>
+<input type="submit" value="出題" class="btn btn-success">
+<% end %>

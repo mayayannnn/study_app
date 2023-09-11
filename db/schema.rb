@@ -13,7 +13,8 @@
 ActiveRecord::Schema[7.0].define(version: 2023_09_05_121717) do
   create_table "boards", force: :cascade do |t|
     t.text "content"
-    t.text "subject"
+    t.string "subject"
+    t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -21,7 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_121717) do
   create_table "questions", force: :cascade do |t|
     t.text "content"
     t.text "answer"
-    t.text "subject"
+    t.string "subject"
+    t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_121717) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

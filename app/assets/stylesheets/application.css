@@ -22,3 +22,9 @@ body{
     margin-left:20px;
     color:black;
 }
+.home_li{
+    list-style: none;
+}
+.link-secondary{
+    text-decoration: none;
+}
