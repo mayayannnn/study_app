@@ -1,0 +1,2 @@
+class BoardAnswer < ApplicationRecord
+end

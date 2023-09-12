@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_121717) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
+  create_table "board_answers", force: :cascade do |t|
+    t.integer "board_id"
+    t.text "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "boards", force: :cascade do |t|
     t.text "content"
     t.string "subject"

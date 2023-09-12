@@ -11,7 +11,7 @@ body{
 }
 .li{
     
-    margin-left: 30px;
+    margin-right: 30px;
     font-size: 140%;
     font-weight: bold;/* 文字を濃く */
     color: white;
@@ -27,4 +27,15 @@ body{
 }
 .link-secondary{
     text-decoration: none;
+}
+.flash{
+    font-size:100px;
+    height: 100%;
+    width: 100%;
+    color:red;
+}
+.title{
+    font-size:150%;
+    color: black;
+    margin-right: 100px;
 }

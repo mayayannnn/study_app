@@ -6,7 +6,7 @@ class BoardController < ApplicationController
   def ask_quesiton
   end
   def content
-    @borads = Board.where(subject: params[:id])
+    @boards = Board.where(subject: params[:id])
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -57,5 +57,14 @@ class BoardController < ApplicationController
     @content.save
     redirect_to("/")
   end
-
+  def answer
+    @board = Board.find_by(id: params[:board_id])
+    @answers = BoardAnswer.where(board_id: params[:board_id])
+  end
+  def create_answer
+    @answer = BoardAnswer.new(board_id: params[:board_id],
+                              answer: params[:answer])
+    @answer.save
+    redirect_to("/")
+  end
 end

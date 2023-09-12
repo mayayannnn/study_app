@@ -1,0 +1,13 @@
+<%= form_tag("/create_answer") do %>
+<h1><%= @board.content %></h1>
+<% @answers.each do |answer| %>
+<h3><%= answer.answer %></h3>
+<% end %>
+<div class="form-floating">
+    <textarea name="answer" id="answer" cols="10" rows="30"class="form-control" required></textarea>
+    <label for="answer">答える</label>
+</div>
+<br>
+<input type="hidden" name="board_id" value="<%= @board.id%>">
+<input type="submit" value="送信" class="btn btn-success">
+<% end %>

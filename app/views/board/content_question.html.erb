@@ -13,20 +13,19 @@
 <table class="table table-striped">
     <thead>
         <tr>
-          <th scope="col">id</th>
-          <th scope="col">content</th>
-          <th scope="col">answer</th>
-          <th scope="col">grade</th>
+          <th scope="col">内容</th>
+          <th scope="col">学年</th>
+          <th scope="col"></th>
+          
         </tr>
       </thead>
       <tbody>
         <% @questions.each do |question| %>
         <tr>
           
-          <td scope="row"><%= question.id %></td>
           <td><%= question.content %></td>
-          <td><%= question.answer %></td>
           <td><%= question.grade %></td>
+          <td><a href="#" class="btn btn-success">答える</a></td>
         </tr>
         <%end%>
       </tbody>

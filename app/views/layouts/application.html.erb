@@ -12,9 +12,13 @@
   <body>
     <header class="header">
       <ul>
+      <li class="li title">StudyMate</li>
       <li class="li"><a href="/home" class="link-secondary">home</a></li>
+      <% if @user_id %>
       <li class="li" ><a href="/" class="link-secondary">board</a></li>
       <li class="li" ><a href="/ai_question" class="link-secondary">study</a></li>
+      <% end %>
+      <li class="li"><%= session[:user_name] %></li>
       </ul>
     </header>
     
