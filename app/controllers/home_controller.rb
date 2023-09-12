@@ -14,6 +14,14 @@ class HomeController < ApplicationController
   end
   def login_user
     @user = User.find_by(email: params[:email],password: params[:password])
-    redirect_to("/home")
+    
+    if @user 
+      flash[:notice] = "ログインしました" 
+      session[:user_id] = @user.id
+      redirect_to("/home")
+    else
+      flash[:notice] = "ログインに失敗しました"
+      redirect_to("/home")
+    end
   end
 end
