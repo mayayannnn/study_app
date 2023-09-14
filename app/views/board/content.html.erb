@@ -11,6 +11,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
+          <th>ユーザー名</th>
           <th scope="col">内容</th>
           <th scope="col">学年</th>
           <th scope="col"></th>
@@ -19,7 +20,7 @@
       <tbody>
         <% @boards.each do |board| %>
         <tr>
-          
+          <td><%= @user.name %></td>
           <td><%= board.content %></td>
           <td><%= board.grade %></td>
           <td><a href="/content/<%= @id %>/<%= board.id %>" class="btn btn-success">答える</a></td>

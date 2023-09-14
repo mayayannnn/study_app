@@ -39,3 +39,6 @@ body{
     color: black;
     margin-right: 100px;
 }
+.llink-select{
+    background-color: rgba(90, 167, 237, 1);
+}

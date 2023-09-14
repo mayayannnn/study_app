@@ -14,9 +14,12 @@
       <ul>
       <li class="li title">StudyMate</li>
       <li class="li"><a href="/home" class="link-secondary">home</a></li>
-      <% if @user_id %>
+      <% if session[:user_id] %>
       <li class="li" ><a href="/" class="link-secondary">board</a></li>
       <li class="li" ><a href="/ai_question" class="link-secondary">study</a></li>
+      <% else %>
+      <li class="li" ><a href="/signup" class="link-secondary">新規</a></li>
+      <li class="li" ><a href="/login" class="link-secondary">ログイン</a></li>
       <% end %>
       <li class="li"><%= session[:user_name] %></li>
       </ul>

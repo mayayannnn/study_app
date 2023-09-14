@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
     t.text "content"
     t.string "subject"
     t.string "grade"
+    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
     t.text "answer"
     t.string "subject"
     t.string "grade"
+    t.string "useer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

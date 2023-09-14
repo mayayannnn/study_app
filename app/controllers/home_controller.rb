@@ -13,9 +13,8 @@ class HomeController < ApplicationController
   def login
   end
   def login_user
-    @user = User.find_by(email: params[:email],password: params[:password])
-    
-    if @user 
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       flash[:notice] = "ログインしました"
       session[:user_id] = @user.id
       session[:user_name] = @user.name

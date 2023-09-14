@@ -1,12 +1,14 @@
 class BoardController < ApplicationController
+  before_action :authenticate_user
   def home
   end
   def set_question
   end
   def ask_quesiton
   end
-  def content
+  def content 
     @boards = Board.where(subject: params[:id])
+    @user = User.find_by(id: @content.user_id)
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -44,17 +46,19 @@ class BoardController < ApplicationController
   def create
     @content = Board.new(content:params[:content],
                          subject:params[:subject],
-                         grade:params[:grade]
+                         grade:params[:grade],
+                         user_id:session[:user_id]
                          )
     @content.save
     redirect_to("/")
   end
   def create_question
-    @content = Question.new(content:params[:content],
+    @content_question = Question.new(content:params[:content],
                             subject:params[:subject],
                             answer:params[:answer],
-                            grade:params[:grade])
-    @content.save
+                            grade:params[:grade],
+                            user_id:session[:user_id])
+    @content_question.save
     redirect_to("/")
   end
   def answer

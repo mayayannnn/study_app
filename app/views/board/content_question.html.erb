@@ -13,6 +13,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+          <th>ユーザー名</th>
           <th scope="col">内容</th>
           <th scope="col">学年</th>
           <th scope="col"></th>
@@ -22,7 +23,7 @@
       <tbody>
         <% @questions.each do |question| %>
         <tr>
-          
+          <td><%= question.user_id %></td>
           <td><%= question.content %></td>
           <td><%= question.grade %></td>
           <td><a href="#" class="btn btn-success">答える</a></td>
