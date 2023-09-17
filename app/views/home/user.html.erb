@@ -1,0 +1,7 @@
+<h2>画像</h2>
+<img src="<%= "/user_images/#{@user.image_name}" %>" alt="" width="100px" height="100px">
+<h2>名前</h2>
+<h1 class="user-text-box"><%= @user.name %></h1>
+<h2>メール</h2>
+<h1 class="user-text-box"><%= @user.email %></h1>
+<a href="/user_edit/<%= @user.id %>" class="btn btn-success">編集</a>

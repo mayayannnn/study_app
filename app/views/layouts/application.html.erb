@@ -21,7 +21,7 @@
       <li class="li" ><a href="/signup" class="link-secondary">新規</a></li>
       <li class="li" ><a href="/login" class="link-secondary">ログイン</a></li>
       <% end %>
-      <li class="li"><%= session[:user_name] %></li>
+      <li class="li"><a href="/user/<%= session[:user_id] %>" class="link-secondary"><%= session[:user_name] %></a></li>
       </ul>
     </header>
     

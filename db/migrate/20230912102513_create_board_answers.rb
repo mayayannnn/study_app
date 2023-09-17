@@ -3,6 +3,7 @@ class CreateBoardAnswers < ActiveRecord::Migration[7.0]
     create_table :board_answers do |t|
       t.integer :board_id
       t.text :answer
+      t.string :user_id
       t.timestamps
     end
   end

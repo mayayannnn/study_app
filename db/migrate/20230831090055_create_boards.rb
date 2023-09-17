@@ -5,6 +5,7 @@ class CreateBoards < ActiveRecord::Migration[7.0]
       t.string :subject
       t.string :grade
       t.string :user_id
+      
       t.timestamps
     end
   end

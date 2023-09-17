@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "/login" => "home#login"
   post "/login_user" => "home#login_user"
   get "/logout" => "home#logout"
+  get "/user/:id" => "home#user"
+  get "/user_edit/:id" => "home#user_edit"
+  post "/update/:id" => "home#update"
 
   get '/' => "board#home"
   get "/add_ask_question" => "board#add_ask_question"
@@ -15,6 +18,8 @@ Rails.application.routes.draw do
   get "/content/:id/question" => "board#content_question"
   post "/create_answer" => "board#create_answer"
   get "/content/:id/:board_id" => "board#answer"
+  get "/content_question/:id" => "board#answer_question"
+  post "/check" => "board#check"
 
   get "/ai_question" => "ai_question#home"
   post "/question_for_ai" => "ai_question#question_for_ai"

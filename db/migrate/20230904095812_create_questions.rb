@@ -5,7 +5,7 @@ class CreateQuestions < ActiveRecord::Migration[7.0]
       t.text :answer
       t.string :subject
       t.string :grade
-      t.string :useer_id
+      t.string :user_id
       t.timestamps
     end
   end

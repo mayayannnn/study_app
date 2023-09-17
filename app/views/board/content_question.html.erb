@@ -16,17 +16,18 @@
           <th>ユーザー名</th>
           <th scope="col">内容</th>
           <th scope="col">学年</th>
-          <th scope="col"></th>
+          <th scope="col">　</th>
           
         </tr>
       </thead>
       <tbody>
         <% @questions.each do |question| %>
         <tr>
-          <td><%= question.user_id %></td>
+          <td><img src="<%= "/user_images/#{question.user.image_name}" %>" alt="" width="50px" height="50px">　<%= question.user.name %></td>
+          <td><%= question.user.name %></td>
           <td><%= question.content %></td>
           <td><%= question.grade %></td>
-          <td><a href="#" class="btn btn-success">答える</a></td>
+          <td><a href="/content_question/<%= question.id %>" class="btn btn-success">答える</a></td>
         </tr>
         <%end%>
       </tbody>

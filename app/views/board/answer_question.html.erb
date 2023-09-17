@@ -1,0 +1,9 @@
+<%= form_tag("/check") do %>
+<h1><%= @question.content %></h1>
+<input type="hidden" name="id" value="<%= @question.id%>">
+<div class="form-floating">
+    <textarea name="answer" id="answer" cols="10" rows="30"class="form-control" required></textarea>
+    <label for="answer">答える</label>
+</div>
+<input type="submit"  class="btn btn-success" value="丸付け">
+<% end %>

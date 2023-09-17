@@ -7,8 +7,8 @@ class BoardController < ApplicationController
   def ask_quesiton
   end
   def content 
+    @boards = Board.all.order(create_at: :desc)
     @boards = Board.where(subject: params[:id])
-    @user = User.find_by(id: @content.user_id)
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -67,8 +67,22 @@ class BoardController < ApplicationController
   end
   def create_answer
     @answer = BoardAnswer.new(board_id: params[:board_id],
-                              answer: params[:answer])
+                              answer: params[:answer],
+                              user_id:session[:user_id])
     @answer.save
     redirect_to("/")
+  end
+  def answer_question
+    @question = Question.find_by(id: params[:id])
+  end
+  def check
+    @question = Question.find_by(answer: params[:answer])
+    if @question
+      @check = "正解"
+    else
+      @check = "不正解"
+      @question = Question.find_by(id: params[:id])
+    end
+    @answer = params[:answer]
   end
 end

@@ -1,16 +1,15 @@
+body{
+    margin:0%
+}
 .header{
     height: 100%;
     width: 100%;
     background-color:rgba(90, 167, 237, 1);
     display: flex;
     margin: 0%;
-
-}
-body{
-    margin:0%
 }
 .li{
-    
+    /* headerの文字 */
     margin-right: 30px;
     font-size: 140%;
     font-weight: bold;/* 文字を濃く */
@@ -18,27 +17,55 @@ body{
     float:left; /* 横並び　*/
     list-style: none; /* ぽつ消し*/
 }
+.link-secondary{
+    /* headerの文字(link) */
+    text-decoration: none;
+}
+.title{
+    /* studymateの文字(header) */
+    font-size:150%;
+    color: black;
+    margin-right: 100px;
+}
+
+
 .board_main_h1{
+    /* 教科の文字(board#home)　*/
     margin-left:20px;
     color:black;
 }
 .home_li{
+    /* 教科選択(board#home) */
     list-style: none;
 }
-.link-secondary{
-    text-decoration: none;
-}
 .flash{
+    /* ログイン通知(home#home)　*/
     font-size:100px;
     height: 100%;
     width: 100%;
     color:red;
 }
-.title{
-    font-size:150%;
-    color: black;
-    margin-right: 100px;
+
+
+.title-box{
+    /* コメントのボックス(board#answer) */
+    font-size: 50px;
+    border-radius: 5px; /* 丸み　*/
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1); /* 影　*/
+    margin: 10px;
+    padding-left: 10px;
 }
-.llink-select{
-    background-color: rgba(90, 167, 237, 1);
+.title-span{
+    /* コメントの投稿した名前(board#answer) */
+    font-size: 10px ;
+    margin: 0%;
+}
+.user-text-box{
+    /* テキストボックス(home#user) */
+    font-size: 50px;
+    border: 2px solid rgb(0, 0, 0); 
+    background-color: rgba(0,0,0,0.2); 
+}
+.img{
+    /* ユーザーの写真(board#content) */
 }
