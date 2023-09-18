@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get "/content/:id/:board_id" => "board#answer"
   get "/content_question/:id" => "board#answer_question"
   post "/check" => "board#check"
+  get "/solve/:id" => "board#solve"
+  get "content/:id/solve" => "board#content_solve"
 
   get "/ai_question" => "ai_question#home"
   post "/question_for_ai" => "ai_question#question_for_ai"

@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
     t.string "subject"
     t.string "grade"
     t.string "user_id"
+    t.string "solve"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

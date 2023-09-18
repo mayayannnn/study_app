@@ -8,7 +8,7 @@ class BoardController < ApplicationController
   end
   def content 
     @boards = Board.all.order(create_at: :desc)
-    @boards = Board.where(subject: params[:id])
+    @boards = Board.where(subject: params[:id],solve: "未解決")
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -25,6 +25,29 @@ class BoardController < ApplicationController
       @title = "情報"
     end
   end
+
+
+  def content_solve
+    @board_solves = Board.all.order(create_at: :desc)
+    @board_solves = Board.where(subject: params[:id],solve: "解決")
+    @id = params[:id]
+    @title = ""
+    if params[:id] == "math"
+      @title = "数学"
+    elsif params[:id] == "japanese"
+      @title = "国語"
+    elsif params[:id] == "science"
+      @title = "理科"
+    elsif params[:id] == "society"
+      @title = "社会"
+    elsif params[:id] == "english"
+      @title = "英語"
+    elsif params[:id] == "it"
+      @title = "情報"
+    end
+  end
+
+
   def content_question
     @questions = Question.where(subject: params[:id])
     @id = params[:id]
@@ -47,7 +70,8 @@ class BoardController < ApplicationController
     @content = Board.new(content:params[:content],
                          subject:params[:subject],
                          grade:params[:grade],
-                         user_id:session[:user_id]
+                         user_id:session[:user_id],
+                         solve: "未解決"
                          )
     @content.save
     redirect_to("/")
@@ -84,5 +108,11 @@ class BoardController < ApplicationController
       @question = Question.find_by(id: params[:id])
     end
     @answer = params[:answer]
+  end
+  def solve
+    @board = Board.find_by(id: params[:id])
+    @board.solve = "解決"
+    @board.save
+    redirect_to("/home")
   end
 end

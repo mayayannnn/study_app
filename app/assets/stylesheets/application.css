@@ -1,31 +1,33 @@
 body{
-    margin:0%
+    margin:0%;
 }
 .header{
     height: 100%;
     width: 100%;
-    background-color:rgba(90, 167, 237, 1);
+    background-color:rgb(80, 80, 255);
     display: flex;
     margin: 0%;
 }
 .li{
     /* headerの文字 */
     margin-right: 30px;
-    font-size: 140%;
+    margin-top: 5px;
+    font-size: 120%;
     font-weight: bold;/* 文字を濃く */
-    color: white;
     float:left; /* 横並び　*/
     list-style: none; /* ぽつ消し*/
 }
 .link-secondary{
     /* headerの文字(link) */
-    text-decoration: none;
+    color:white;
+    text-decoration: none; /* 下の線を消す */
 }
 .title{
     /* studymateの文字(header) */
     font-size:150%;
+    font-weight: bold; /* 文字を濃く */
     color: black;
-    margin-right: 100px;
+    margin-right: 1000px;
 }
 
 
@@ -49,7 +51,7 @@ body{
 
 .title-box{
     /* コメントのボックス(board#answer) */
-    font-size: 50px;
+    font-size: 100%;
     border-radius: 5px; /* 丸み　*/
     box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1); /* 影　*/
     margin: 10px;
