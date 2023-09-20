@@ -7,8 +7,7 @@ class BoardController < ApplicationController
   def ask_quesiton
   end
   def content 
-    @boards = Board.all.order(create_at: :desc)
-    @boards = Board.where(subject: params[:id],solve: "未解決")
+    @boards = Board.where(subject: params[:id],solve: "未解決").order(created_at: :desc)
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -28,8 +27,7 @@ class BoardController < ApplicationController
 
 
   def content_solve
-    @board_solves = Board.all.order(create_at: :desc)
-    @board_solves = Board.where(subject: params[:id],solve: "解決")
+    @board_solves = Board.where(subject: params[:id],solve: "解決済み").order(created_at: :desc)
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -49,7 +47,7 @@ class BoardController < ApplicationController
 
 
   def content_question
-    @questions = Question.where(subject: params[:id])
+    @questions = Question.where(subject: params[:id]).order(created_at: :desc)
     @id = params[:id]
     @title = ""
     if params[:id] == "math"
@@ -111,7 +109,7 @@ class BoardController < ApplicationController
   end
   def solve
     @board = Board.find_by(id: params[:id])
-    @board.solve = "解決"
+    @board.solve = "解決済み"
     @board.save
     redirect_to("/home")
   end

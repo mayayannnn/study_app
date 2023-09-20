@@ -1,6 +1,6 @@
 <%= form_tag("/question_for_ai") do %>
-<select class="form-select" aria-label="Default select example" name="grade">
-    <option selected disabled>学年</option>
+<select class="form-select" aria-label="Default select example" name="grade" required>
+    <option selected disabled value="">学年</option>
     <option value="中一">中一</option>
     <option value="中二">中二</option>
     <option value="中三">中三</option>
@@ -9,8 +9,8 @@
     <option value="高三">高三</option>
   </select>
 
-  <select class="form-select" aria-label="Default select example" name="subject">
-    <option selected disabled>教科</option>
+  <select class="form-select" aria-label="Default select example" name="subject" required>
+    <option selected disabled value="">教科</option>
     <option value="数学">数学</option>
     <option value="国語">国語</option>
     <option value="理科">理科</option>
@@ -20,12 +20,12 @@
   </select>
 
   <div class="form-floating">
-    <textarea name="content" id="ai_question" cols="10" rows="30"class="form-control"></textarea>
+    <textarea name="content" id="ai_question" cols="10" rows="30"class="form-control" required></textarea>
     <label for="ai_question">出して欲しい問題を入力</label>
 </div>
 
-<select class="form-select" aria-label="Default select example" name="number">
-    <option selected disabled>出題数</option>
+<select class="form-select" aria-label="Default select example" name="number" required>
+    <option selected disabled value="">出題数</option>
     <option value="3">3</option>
     <option value="5">5</option>
     <option value="10">10</option>

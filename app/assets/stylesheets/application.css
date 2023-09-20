@@ -1,12 +1,19 @@
 body{
     margin:0%;
+    padding-top: 50px;
+}
+textarea {
+	resize: none; /* テキストエリアを固定 */
 }
 .header{
-    height: 100%;
     width: 100%;
     background-color:rgb(80, 80, 255);
     display: flex;
     margin: 0%;
+    position: fixed; /* ヘッダーを固定する */
+    top: 0;
+    left: 0;
+    height: 50px;
 }
 .li{
     /* headerの文字 */
@@ -27,9 +34,18 @@ body{
     font-size:150%;
     font-weight: bold; /* 文字を濃く */
     color: black;
-    margin-right: 1000px;
+    margin-right: 900px;
 }
-
+.top{
+    /* 上に行くボタン(board#content...) */
+    position: fixed; /* ヘッダーを固定する */
+    top: 93%;
+    right: 2%;
+    font-size: 30px;
+}
+.top :hover{
+    opacity: 30%; /* 透明にする */
+}
 
 .board_main_h1{
     /* 教科の文字(board#home)　*/

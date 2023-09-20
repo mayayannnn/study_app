@@ -2,7 +2,7 @@
     <h1><%= @title %></h1>
 </div>
 <br>
-<a href="/content/<%= @id %>/solve" class="btn btn-warning">解決</a>
+<a href="/content/<%= @id %>/solve" class="btn btn-warning">解決済み</a>
 
 <a href="/content/<%= @id %>" class="btn btn-info">未解決</a>
 
@@ -14,14 +14,14 @@
           <th>ユーザー名</th>
           <th scope="col">内容</th>
           <th scope="col">学年</th>
-          <th scope="col"></th>
+          <th scope="col">　</th>
         </tr>
       </thead>
       <tbody>
         <% @board_solves.each do |board_solves| %>
         <tr>
           <td><img src="<%= "/user_images/#{board_solves.user.image_name}" %>" alt="" width="50px" height="50px">　<%= board_solves.user.name %></td>
-          <td><%= board_solves.content %></td>
+          <td><%= board_solves.content.truncate(40) %></td>
           <td><%= board_solves.grade %></td>
           <td><a href="/content/<%= @id %>/<%= board_solves.id %>" class="btn btn-success">答える</a></td>
         </tr>

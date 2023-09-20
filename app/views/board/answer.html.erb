@@ -1,5 +1,6 @@
 <%= form_tag("/create_answer") do %>
-<h1 class="title-box"> <img src="<%= "/user_images/#{@board.user.image_name}" %>" alt="" width="50px" height="50px"><span class="title-span"><%= @board.user.name %></span>　<%= @board.content %></h1>
+<h1 class="title-box"> <img src="<%= "/user_images/#{@board.user.image_name}" %>" alt="" width="50px" height="50px"><span class="title-span"><%= @board.user.name %></span>
+<br><%= safe_join(@board.content.split("\n"),tag(:br)) %></h1>
 <% @answers.each do |answer| %>
 <h3 class="title-box"> <img src="<%= "/user_images/#{answer.user.image_name}" %>" alt="" width="50px" height="50px"><span class="title-span"><%= answer.user.name%></span>　<%= answer.answer %></h3>
 <% end %>
@@ -11,6 +12,6 @@
 <input type="hidden" name="board_id" value="<%= @board.id%>">
 <input type="submit" value="送信" class="btn btn-success">
 <% end %>
-<% if @board.user.id == session[:user_id] %>
-    <a href="/solve/<%= @board.id %>">解決した</a>
+<% if @board.user.id == session[:user_id] && @board.solve == "未解決" %>
+    <a href="/solve/<%= @board.id %>" class="btn btn-info">解決した</a>
 <% end %>
