@@ -1,5 +1,5 @@
 <div>
-    <h1><%= @title %></h1>
+    <h1 ><%= @title %></h1>
 </div>
 <br>
 <a href="/content/<%= @id %>/solve" class="btn btn-warning">解決済み</a>
@@ -26,5 +26,7 @@
           <td><a href="/content/<%= @id %>/<%= board_solves.id %>" class="btn btn-success">答える</a></td>
         </tr>
         <%end%>
+        <a href="#top" style="color:inherit"><i class="bi bi-arrow-up-square-fill top"></i></a>
       </tbody>
+      
   </table>

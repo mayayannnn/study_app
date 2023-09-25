@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_102607) do
   create_table "board_answers", force: :cascade do |t|
     t.integer "board_id"
     t.text "answer"
@@ -25,6 +25,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_102513) do
     t.string "grade"
     t.string "user_id"
     t.string "solve"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nices", force: :cascade do |t|
+    t.string "user_id"
+    t.string "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

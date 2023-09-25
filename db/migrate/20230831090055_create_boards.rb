@@ -6,6 +6,7 @@ class CreateBoards < ActiveRecord::Migration[7.0]
       t.string :grade
       t.string :user_id
       t.string :solve
+      t.string :image
       t.timestamps
     end
   end

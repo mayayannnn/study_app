@@ -1,26 +1,52 @@
 <h1 class="board_main_h1">教科</h1>
 <ul >
 <div class="btn-group" role="group" aria-label="Basic outlined example">
-<li class="home_li">
+<li class="board_home_li">
     <a class="btn btn-outline-primary" aria-current="page" href="/content/math">数学</a>
 </li>
-<li class="home_li">
+<li class="board_home_li">
     <a class="btn btn-outline-primary" aria-current="page" href="/content/japanese">国語</a>
 </li>
-<li class="home_li">
+<li class="board_home_li">
     <a class="btn btn-outline-primary" aria-current="page" href="/content/science">理科</a>
 </li>
-<li class="home_li">
+<li class="board_home_li">
     <a class="btn btn-outline-primary" aria-current="page" href="/content/society">社会</a>
 </li>  
-<li class="home_li">
+<li class="board_home_li">
     <a class="btn btn-outline-primary" aria-current="page" href="/content/english">英語</a>
 </li>
-<li class="home_li">
+<li class="board_home_li">
     <a class="btn btn-outline-primary" aria-current="page" href="/content/it">情報</a>
 </li>
 </div>
 </ul>
 <a href="/add_set_question" class="btn btn-warning">問題</a>
 <a href="/add_ask_question" class="btn btn-success">質問</a>
-
+<br>
+<% if @board %>
+<p>自分が投稿した質問</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">ユーザー名</th>
+          <th scope="col">内容</th>
+          <th scope="col">学年</th>
+          <th scope="col">教科</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @boards.each do |board| %>
+        <tr>
+          <td><img src="<%= "/user_images/#{board.user.image_name}" %>" alt="" width="50px" height="50px">　<%= board.user.name %></td>
+          <td><%= board.content.truncate(40) %></td>
+          <td><%= board.grade %></td>
+          <td><%= board.subject %></td>
+          <td><a href="/content/<%= board.subject %>/<%= board.id %>" class="btn btn-success">答える</a></td>
+        </tr>
+        <%end%>
+        <a href="#top" style="color:inherit"><i class="bi bi-arrow-up-square-fill top"></i></a>
+      </tbody>
+  </table>
+<% end %>

@@ -23,11 +23,25 @@
       <tbody>
         <% @questions.each do |question| %>
         <tr>
-          <td><img src="<%= "/user_images/#{question.user.image_name}" %>" alt="" width="50px" height="50px">　<%= question.user.name %></td>
+          <td><img src="<%= "/user_images/#{question.user.image_name}" %>" alt="" width="50px" height="50px">　<%= question.user.name %>
+          <% if Nice.find_by(user_id: session[:user_id],question_id: question.id)%>
+            <%= link_to("/nice/#{question.id}/destroy",{method:"post"}) do %>
+            <i class="bi bi-heart-fill" style="color: red;"></i>
+            <% end %>
+          <% else %>
+            <%= link_to("/nice/#{question.id}/create",{method:"post"}) do %>
+            <i class="bi bi-heart" style="color:black;"></i>
+            <% end %>
+          <% end %>
+          <%= Nice.where(question_id: question.id).count %>
+          </td>
           <td><%= question.content.truncate(40) %></td>
           <td><%= question.grade %></td>
           <td><a href="/content_question/<%= question.id %>" class="btn btn-success">答える</a></td>
+
         </tr>
         <%end%>
+        <a href="#top" style="color:inherit"><i class="bi bi-arrow-up-square-fill top"></i></a>
+        <a href="/add_set_question"  style="color:inherit"><i class="bi bi-plus-circle-fill up"></i></a>
       </tbody>
   </table>

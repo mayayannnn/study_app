@@ -1,3 +1,88 @@
 <p class="flash"><%= flash[:notice] %></p>
-<h1>StudyMate</h1>
-<a href="/logout" class="btn btn-danger">ログアウト</a>
+<div class="home_img">
+    <img src="/image/home.png" width="100%" height="500px">
+    <h1>StudyMate</h1>
+    <h2>もっと楽しく、簡単に、勉強を</h2>
+</div>
+<h1 class="home_h1_top" style="color: #0a6629;">こんな悩みありませんか？</h1>
+<div class="home_li">
+    <div><h3>勉強に<br><span class="underline">集中出来ない</span></h3></li></div>
+    <div><h3>問題が<br><span class="underline">分からない</span></h3></li></div>
+    <div><h3><span class="underline">自分に合った</span><br>問題を解きたい</h3></li></div>
+</div>
+
+
+<p class="home_p"> こんな悩みをもっているのなら、すぐにStudyMateに参加しよう!<br>
+    同じ悩みを持った人達と一緒に、楽しく勉強しよう。</p>
+
+<br>
+
+<h1 class="home_h1">機能</h1>
+<hr>
+
+<div class="home_div">
+    <div>
+    <h2 class="home_h2" >みんなで<span class="underline_red">問題を出し合おう</span></h2>
+    <p>自分で作った問題を出したり、他の人が作った問題を解くことが出来ます。</p>
+    </div>
+    <div>
+        <img src="/image/home.png" alt="" width="600px">
+    </div>
+</div>
+<br>
+<div>
+
+
+<div class="home_div">
+    <div>
+        <img src="/image/home.png" alt="" width="600px">
+    </div>
+    <div>
+        <h2 class="home_h2" ><span class="underline_red">分からないこと</span>を聞いてみよう</h2>
+        <p >他の人に今自分が分からないことを聞いてみましょう。</p>
+        <p >きっと、知っている人が声をかけてくれます。</p>
+    </div>
+</div>
+<br>
+
+
+<div class="home_div">
+    <div>
+        <h2 class="home_h2"><span class="underline_red">AIに問題を</span>出してもらおう</h2>
+        <p>自分の出して欲しい問題をAIに出してもらいましょう</p>
+    </div>
+    <div>
+        <img src="/image/home.png" alt="" width="600px">
+    </div>
+</div>
+<div class="home_bottom">
+    <hr>
+    <h1 class="home_h1">StudyMateで、もっと楽しく勉強を</h1>
+    <a href="/login" class="home_a">今すぐ始める</a>
+</div>
+<div class="home_bottom_black">
+        <div>
+            <h1><a href="/home" >ホーム</a></h1>
+        </div>
+        
+        <% if session[:user_id] %>
+        <div>
+            <h1><a href="/">投稿</a></h1>
+        </div>
+        <div>
+            <h1><a href="/ai_question" >勉強</a></h1>
+        </div>
+        <% else %>
+        <div>
+            <h1><a href="/signup">新規</a></h1>
+        </div>
+        <div>
+            <h1><a href="/login" >ログイン</a></h1>
+        </div>
+
+        <% end %>
+        <div>
+            <h1><a href="/user/<%= session[:user_id] %>" ><%= session[:user_name] %></a></h1>
+        </div>
+
+</div>

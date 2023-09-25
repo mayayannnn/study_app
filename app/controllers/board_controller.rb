@@ -1,6 +1,7 @@
 class BoardController < ApplicationController
   before_action :authenticate_user
   def home
+    @boards = Board.where(user_id: session[:user_id]).order(created_at: :desc)
   end
   def set_question
   end
@@ -65,13 +66,19 @@ class BoardController < ApplicationController
     end
   end
   def create
-    @content = Board.new(content:params[:content],
-                         subject:params[:subject],
-                         grade:params[:grade],
-                         user_id:session[:user_id],
-                         solve: "未解決"
-                         )
+      @content = Board.new(content:params[:content],
+      subject:params[:subject],
+      grade:params[:grade],
+      user_id:session[:user_id],
+      solve: "未解決",
+      image: nil)
     @content.save
+    if params[:image]
+      @content.image = "#{@content.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/content_images/#{@content.id}.jpg",image.read)
+      @content.save
+    end
     redirect_to("/")
   end
   def create_question
@@ -98,13 +105,7 @@ class BoardController < ApplicationController
     @question = Question.find_by(id: params[:id])
   end
   def check
-    @question = Question.find_by(answer: params[:answer])
-    if @question
-      @check = "正解"
-    else
-      @check = "不正解"
-      @question = Question.find_by(id: params[:id])
-    end
+    @question = Question.find_by(id: params[:id])
     @answer = params[:answer]
   end
   def solve

@@ -5,6 +5,128 @@ body{
 textarea {
 	resize: none; /* テキストエリアを固定 */
 }
+
+
+/* homeの上の部分 */
+.home_img{
+    position: relative;/*相対配置*/
+    }
+.home_img h1{
+    position: absolute;/*絶対配置*/
+    top: 0;
+    left: 0;
+    padding-left: 100px;
+    padding-top : 50px;
+    font-size: 100px;
+}
+.home_img h2{
+    position: absolute;/*絶対配置*/
+    top: 0;
+    left: 0;
+    padding-left: 300px;
+    padding-top : 20%;
+    font-size: 80px;
+}
+.underline{
+    background:linear-gradient(transparent 70%, rgba(255, 252, 107, .69) 70%);
+}
+.underline_red{
+    background:linear-gradient(transparent 70%, rgba(255, 107, 107, 0.69) 70%);
+}
+/*  */
+.home_li{
+    margin-top: 30px;
+    display: flex;
+    justify-content:space-around;
+    
+}
+.home_div{
+    display: flex;
+    justify-content:space-around;
+}
+.home_div p{
+    font-size: 30px;
+    margin: 0;
+}
+.home_div img{
+    margin-bottom: 30px;
+}
+.home_a{
+    background-color: #0a6629;
+    font-size: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-decoration: none; /* 下の線を消す */
+    color: white;
+    border-radius: 10px ;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.home_bottom{
+    background-color: rgb(0,0,255,0.5);
+    padding-bottom: 5%;
+}
+.home_bottom_black{
+    background-color: black;
+    padding-bottom: 100px;
+    display: flex;
+    padding: 10px;
+    justify-content:space-around;
+}
+.home_bottom_black hr{
+    background-color: rgba(200,200,200);
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.home_bottom_black a{
+    
+    color: white;
+    text-decoration: none; /* 下の線を消す */
+}
+.home_li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+    margin: auto 0;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2); /* 影　*/
+}
+.home_background-color{
+    background-color: rgb(0,0,255,0.6);
+}
+.home_h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 50px;
+    
+}
+.home_h2{
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.home_p{
+    
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+    
+}
+.home_h1_top{
+    font-size: 50px;
+    
+    color: black;
+    border-bottom: 3px solid #0a6629;
+    margin-top: 10px;
+
+}
+
 .header{
     width: 100%;
     background-color:rgb(80, 80, 255);
@@ -43,16 +165,18 @@ textarea {
     right: 2%;
     font-size: 30px;
 }
-.top :hover{
-    opacity: 30%; /* 透明にする */
+.up{
+    position: fixed; /* ヘッダーを固定する */
+    top: 93%;
+    right: 4%;     
+    font-size: 30px;
 }
-
 .board_main_h1{
     /* 教科の文字(board#home)　*/
     margin-left:20px;
     color:black;
 }
-.home_li{
+.board_home_li{
     /* 教科選択(board#home) */
     list-style: none;
 }
@@ -62,6 +186,51 @@ textarea {
     height: 100%;
     width: 100%;
     color:red;
+}
+.login{
+    /* ログイン画面 */
+    margin-top: 100px;
+    padding-bottom: 100px;
+    margin-left: 400px;
+    margin-right: 500px;
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1); /* 影　*/
+}
+.login h1{
+    margin-left: 100px;
+}
+.login input{
+    margin-left: 80px;
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+}
+.login p{
+    margin-left: 80px;
+}
+
+
+.signup{
+    /* サインアップ画面 */
+    margin-top: 70px;
+    padding-bottom: 30px;
+    margin-left: 400px;
+    margin-right: 500px;
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1); /* 影　*/
+}
+.signup h1{
+    margin-left: 100px;
+}
+.signup input{
+    margin-left: 80px;
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+}
+.signup p{
+    font-size: 20px;
+    margin-left: 80px;
 }
 
 

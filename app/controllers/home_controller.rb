@@ -3,14 +3,19 @@ class HomeController < ApplicationController
   def home
   end
   def create_user
-    @user = User.new(name:params[:name],
-                     email:params[:email],
-                     password:params[:password],
-                     image_name: "default_user.jpg")
-    @user.save
-    session[:user_id] = @user.id
-    session[:user_name] = @user.name
-    redirect_to("/home")
+    if params[:password] == params[:password_check]
+      @user = User.new(name:params[:name],
+      email:params[:email],
+      password:params[:password],
+      image_name: "default_user.jpg")
+      @user.save
+      session[:user_id] = @user.id
+      session[:user_name] = @user.name
+      redirect_to("/home")
+    else
+      flash[:notice] = "パスワードが異なっています"
+      redirect_to("/signup")
+    end
   end
   def signup
   end

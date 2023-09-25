@@ -1,11 +1,16 @@
-<h1>新規</h1>
-<%= form_tag("/create_user") do %>
-<p>名前</p>
-<input name="name" required>
-<p>email</p>
-<input name="email" required>
-<p>password</p>
-<input name="password" type="password" required>
-<br>
-<input type="submit" value="新規">
-<%end%>
+<div class="signup">
+    <h1>サインアップ</h1>
+    <p><%= flash[:notice] %></p>
+    <%= form_tag("/create_user") do %>
+    <p>名前</p>
+    <input name="name" required >
+    <p>email</p>
+    <input name="email" type="email" required>
+    <p>password</p>
+    <input name="password" type="password" required>
+    <p>もう一度パスワードを入れてください</p>
+    <input name="password_check" type="password" required>
+    <br>
+    <input type="submit" value="新規" class="btn btn-primary">
+    <%end%>
+</div>
