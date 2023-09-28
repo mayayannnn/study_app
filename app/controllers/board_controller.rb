@@ -1,7 +1,7 @@
 class BoardController < ApplicationController
   before_action :authenticate_user
   def home
-    @boards = Board.where(user_id: session[:user_id]).order(created_at: :desc)
+    @boards = Board.where(user_id: session[:user_id],solve: "未解決").order(created_at: :desc)
   end
   def set_question
   end
