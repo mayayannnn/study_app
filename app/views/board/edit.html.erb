@@ -1,0 +1,29 @@
+<%= form_tag("/content/update/#{@board.id}",{multipart: true}) do %>
+<div>
+  <input class="form-control" name="content" style="width: 100%; height: 50px;"  placeholder=質問を入力 value="<%= @board.content%>"></textarea>
+</div>
+<p>画像</p>
+<input type="file" name="image" multiple>
+
+<br>
+<select class="form-select" aria-label="Default select example" name="subject"  value="<%= @board.subject %>">
+    <option selected disabled value=""><%= @title %></option>
+    <option value="math">数学</option>
+    <option value="japanese">国語</option>
+    <option value="science">理科</option>
+    <option value="society">社会</option>
+    <option value="engliish">英語</option>
+    <option value="it">情報</option>
+  </select>
+  <select class="form-select" aria-label="Default select example" name="grade"  value="<%= @board.grade%>">
+    <option selected disabled value=""><%= @board.grade %></option> 
+    <option value="中一">中一</option>
+    <option value="中二">中二</option>
+    <option value="中三">中三</option>
+    <option value="高一">高一</option>
+    <option value="高二">高二</option>
+    <option value="高三">高三</option>
+  </select>
+
+<input type="submit" value="変更する" class="btn btn-success">
+<% end %>

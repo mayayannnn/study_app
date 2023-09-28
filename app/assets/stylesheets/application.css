@@ -2,131 +2,12 @@ body{
     margin:0%;
     padding-top: 50px;
 }
+
 textarea {
 	resize: none; /* テキストエリアを固定 */
 }
 
-
-/* homeの上の部分 */
-.home_img{
-    position: relative;/*相対配置*/
-    }
-.home_img h1{
-    position: absolute;/*絶対配置*/
-    top: 0;
-    left: 0;
-    padding-left: 100px;
-    padding-top : 50px;
-    font-size: 100px;
-}
-.home_img h2{
-    position: absolute;/*絶対配置*/
-    top: 0;
-    left: 0;
-    padding-left: 300px;
-    padding-top : 20%;
-    font-size: 80px;
-}
-.underline{
-    background:linear-gradient(transparent 70%, rgba(255, 252, 107, .69) 70%);
-}
-.underline_red{
-    background:linear-gradient(transparent 70%, rgba(255, 107, 107, 0.69) 70%);
-}
-/*  */
-.home_li{
-    margin-top: 30px;
-    display: flex;
-    justify-content:space-around;
-    
-}
-.home_div{
-    display: flex;
-    justify-content:space-around;
-}
-.home_div p{
-    font-size: 30px;
-    margin: 0;
-}
-.home_div img{
-    margin-bottom: 30px;
-}
-.home_a{
-    background-color: #0a6629;
-    font-size: 50px;
-    margin-left: 30%;
-    margin-right: 30%;
-    text-decoration: none; /* 下の線を消す */
-    color: white;
-    border-radius: 10px ;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.home_bottom{
-    background-color: rgb(0,0,255,0.5);
-    padding-bottom: 5%;
-}
-.home_bottom_black{
-    background-color: black;
-    padding-bottom: 100px;
-    display: flex;
-    padding: 10px;
-    justify-content:space-around;
-}
-.home_bottom_black hr{
-    background-color: rgba(200,200,200);
-    margin: 0;
-    padding-bottom: 50px;
-}
-
-.home_bottom_black a{
-    
-    color: white;
-    text-decoration: none; /* 下の線を消す */
-}
-.home_li div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 200px;
-    width: 200px;
-    margin-top: 10px;
-    margin: auto 0;
-    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2); /* 影　*/
-}
-.home_background-color{
-    background-color: rgb(0,0,255,0.6);
-}
-.home_h1{
-    text-align: center;
-    font-size: 50px;
-    margin-top: 50px;
-    
-}
-.home_h2{
-    margin-left: 20px;
-    font-size: 40px;
-    font-weight: bold;
-}
-.home_p{
-    
-    font-size: 30px;
-    text-align: center;
-    margin-top: 100px;
-    
-}
-.home_h1_top{
-    font-size: 50px;
-    
-    color: black;
-    border-bottom: 3px solid #0a6629;
-    margin-top: 10px;
-
-}
-
+/* ヘッダー */
 .header{
     width: 100%;
     background-color:rgb(80, 80, 255);
@@ -137,6 +18,7 @@ textarea {
     left: 0;
     height: 50px;
 }
+
 .li{
     /* headerの文字 */
     margin-right: 30px;
@@ -146,11 +28,13 @@ textarea {
     float:left; /* 横並び　*/
     list-style: none; /* ぽつ消し*/
 }
+
 .link-secondary{
     /* headerの文字(link) */
     color:white;
     text-decoration: none; /* 下の線を消す */
 }
+
 .title{
     /* studymateの文字(header) */
     font-size:150%;
@@ -158,6 +42,7 @@ textarea {
     color: black;
     margin-right: 900px;
 }
+
 .top{
     /* 上に行くボタン(board#content...) */
     position: fixed; /* ヘッダーを固定する */
@@ -165,30 +50,213 @@ textarea {
     right: 2%;
     font-size: 30px;
 }
+
+/* ----------------------------------------------------------------------------------- */
+/* home↓ */
+
+.home_h1_top{
+    /* こんな悩みありませんか　本体 */
+    font-size: 50px;
+    color: black;
+    border-bottom: 3px solid #0a6629;
+    margin-top: 10px;
+}
+.home_li{
+    /* こんな悩みありませんか？下 */
+    margin-top: 30px;
+    display: flex;
+    justify-content:space-around;
+    
+}
+
+.home_li div{
+     /* こんな悩みありませんか？下 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+    margin: auto 0;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2); /* 影　*/
+}
+
+
+/* 下の三分率画面 */
+.home_div{
+    display: flex;
+    justify-content:space-around;
+}
+
+
+
+.home_div p{
+    /* テキスト */
+    font-size: 30px;
+    margin: 0;
+}
+
+.home_div img{
+    /* 画像 */
+    margin-bottom: 30px;
+}
+
+/* アンダーライン */
+.underline{
+    background:linear-gradient(transparent 70%, rgba(255, 252, 107, .69) 70%);
+}
+
+.underline_red{
+    background:linear-gradient(transparent 70%, rgba(255, 107, 107, 0.69) 70%);
+}
+
+
+.home_a{
+    /* home下の画面(今すぐ始めよう) */
+    background-color: #0a6629;
+    font-size: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 50px;
+    text-decoration: none; /* 下の線を消す */
+    color: white;
+    border-radius: 10px ;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.home_bottom{
+    background-color: rgb(0,0,255,0.5);
+    padding-bottom: 5%;
+}
+
+.home_bottom_black{
+    /* 一番下の画面 */
+    background-color: black;
+    padding-bottom: 100px;
+    display: flex;
+    padding: 10px;
+    justify-content:space-around;
+}
+
+.home_bottom_black hr{
+    /* 下画面分ける */
+    background-color: rgba(200,200,200);
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.home_bottom_black a{
+    /* 下画面　リンク */
+    color: white;
+    text-decoration: none; /* 下の線を消す */
+}
+.home_background-color{
+    /* 上の色 */
+    background-color: rgb(0,0,255,0.6);
+}
+
+.home_h1{
+    /* h1 */
+    text-align: center;
+    font-size: 50px;
+    margin-top: 50px;
+    
+}
+
+.home_h2{
+    /* h2 */
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.home_p{
+    /* p */
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+    
+}
+
+/* home↑ */
+/* --------------------------------------------------------------------------------- */
+
 .up{
     position: fixed; /* ヘッダーを固定する */
     top: 93%;
     right: 4%;     
     font-size: 30px;
 }
+
+/* -------------------------------------------------------------------------------- */
+/* board↓ */
+
 .board_main_h1{
     /* 教科の文字(board#home)　*/
+    font-size: 50px;
     margin-left:20px;
     color:black;
 }
+
 .board_home_li{
     /* 教科選択(board#home) */
     list-style: none;
 }
-.flash{
-    /* ログイン通知(home#home)　*/
-    font-size:100px;
-    height: 100%;
-    width: 100%;
-    color:red;
+
+/* 教科選択 */
+.btn-disply{
+    display: flex;
+    justify-content:space-around;
 }
+.btn-disply a{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 30px;
+}
+
+
+.board_home_btn{
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+}
+
+/* テキストbox系 */
+
+.title-box{
+    /* コメントのボックス(board#answer) */
+    font-size: 100%;
+    border-radius: 5px; /* 丸み　*/
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1); /* 影　*/
+    margin: 10px;
+    padding-left: 10px;
+}
+.title-span{
+    /* コメントの投稿した名前(board#answer) */
+    font-size: 10px ;
+    margin: 0%;
+}
+.user-text-box{
+    /* テキストボックス(home#user) */
+    font-size: 50px;
+    border: 2px solid rgb(0, 0, 0); 
+    background-color: rgba(0,0,0,0.2); 
+}
+
+
+/* board↑ */
+/* --------------------------------------------------------------------------------- */
+
+
+/* ログイン画面 */
 .login{
-    /* ログイン画面 */
+    
     margin-top: 100px;
     padding-bottom: 100px;
     margin-left: 400px;
@@ -210,8 +278,10 @@ textarea {
 }
 
 
+
+
+ /* サインアップ画面 */
 .signup{
-    /* サインアップ画面 */
     margin-top: 70px;
     padding-bottom: 30px;
     margin-left: 400px;
@@ -233,26 +303,3 @@ textarea {
     margin-left: 80px;
 }
 
-
-.title-box{
-    /* コメントのボックス(board#answer) */
-    font-size: 100%;
-    border-radius: 5px; /* 丸み　*/
-    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1); /* 影　*/
-    margin: 10px;
-    padding-left: 10px;
-}
-.title-span{
-    /* コメントの投稿した名前(board#answer) */
-    font-size: 10px ;
-    margin: 0%;
-}
-.user-text-box{
-    /* テキストボックス(home#user) */
-    font-size: 50px;
-    border: 2px solid rgb(0, 0, 0); 
-    background-color: rgba(0,0,0,0.2); 
-}
-.img{
-    /* ユーザーの写真(board#content) */
-}

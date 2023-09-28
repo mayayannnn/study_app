@@ -11,32 +11,32 @@ class HomeController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       session[:user_name] = @user.name
-      redirect_to("/home")
+      redirect_to home_url, info: "登録しました"
     else
-      flash[:notice] = "パスワードが異なっています"
-      redirect_to("/signup")
+      flash[:notice] = "確認用パスワードが間違っています"
+      redirect_to("/signup?name=#{params[:name]}&email=#{params[:email]}")
     end
   end
   def signup
+    @name = params[:name]
+    @email = params[:email]
   end
   def login
   end
   def login_user
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
-      flash[:notice] = "ログインしました"
       session[:user_id] = @user.id
       session[:user_name] = @user.name
-      redirect_to("/home")
+      redirect_to home_url, info: "ログインしました"
     else
-      flash[:notice] = "ログインに失敗しました"
-      redirect_to("/home")
+      redirect_to home_url, danger: "ログインに失敗しました"
     end
   end
   def logout
     session[:user_id] = nil
     session[:user_name] = nil
-    redirect_to("/home")
+    redirect_to home_url, danger: "ログアウトしました"
   end
   def user
     @user = User.find_by(id: params[:id])
@@ -59,6 +59,7 @@ class HomeController < ApplicationController
       File.binwrite("public/user_images/#{@user.image_name}",image.read)
     end
     @user.save
-    redirect_to("/user/#{@user.id}")
+    redirect_to("/user/#{@user.id}", success: "変更しました")
+
   end
 end

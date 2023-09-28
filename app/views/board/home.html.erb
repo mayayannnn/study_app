@@ -1,31 +1,23 @@
 <h1 class="board_main_h1">教科</h1>
-<ul >
-<div class="btn-group" role="group" aria-label="Basic outlined example">
-<li class="board_home_li">
-    <a class="btn btn-outline-primary" aria-current="page" href="/content/math">数学</a>
-</li>
-<li class="board_home_li">
-    <a class="btn btn-outline-primary" aria-current="page" href="/content/japanese">国語</a>
-</li>
-<li class="board_home_li">
-    <a class="btn btn-outline-primary" aria-current="page" href="/content/science">理科</a>
-</li>
-<li class="board_home_li">
-    <a class="btn btn-outline-primary" aria-current="page" href="/content/society">社会</a>
-</li>  
-<li class="board_home_li">
-    <a class="btn btn-outline-primary" aria-current="page" href="/content/english">英語</a>
-</li>
-<li class="board_home_li">
-    <a class="btn btn-outline-primary" aria-current="page" href="/content/it">情報</a>
-</li>
+<div class="btn-disply"> 
+<div><a class="btn btn-outline-primary" aria-current="page" href="/content/math">数学</a></div>
+<div><a class="btn btn-outline-primary" aria-current="page" href="/content/japanese">国語</a></div>
+<div><a class="btn btn-outline-primary" aria-current="page" href="/content/science">理科</a></div>
+<div><a class="btn btn-outline-primary" aria-current="page" href="/content/society">社会</a></div>
+<div><a class="btn btn-outline-primary" aria-current="page" href="/content/english">英語</a></div>
+<div><a class="btn btn-outline-primary" aria-current="page" href="/content/it">情報</a></div>
 </div>
-</ul>
-<a href="/add_set_question" class="btn btn-warning">問題</a>
-<a href="/add_ask_question" class="btn btn-success">質問</a>
+
+
+    
+<div class="board_home_btn">
+  <div><a href="/add_set_question" class="btn btn-warning">問題</a></div>
+  <div><a href="/add_ask_question" class="btn btn-success">質問</a></div>
+</div>
+
 <br>
-<% if @board %>
-<p>自分が投稿した質問</p>
+<% if @boards.count >= 1 %>
+<h1>自分が投稿した質問</h1>
 <table class="table table-striped">
     <thead>
         <tr>

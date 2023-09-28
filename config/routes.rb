@@ -18,11 +18,20 @@ Rails.application.routes.draw do
   get "/content/:id/question" => "board#content_question"
   get "/content/:id/solve" => "board#content_solve"
   post "/create_answer" => "board#create_answer"
-  get "/content/:id/:board_id" => "board#answer"
+  
   get "/content_question/:id" => "board#answer_question"
   post "/check" => "board#check"
   get "/solve/:id" => "board#solve"
-
+  get "/destroy/:id" => "board#destroy"
+  get "/content/edit/:id" => "board#edit"
+  post "/content/update/:id" => "board#update"
+  get "/content/:id/:board_id" => "board#answer"
+  get "/content_question/edit/:id" => "board#edit_question"
+  post "/content_question/update/:id" => "board#update_question"
+  get "/destroy_question/:id" => "board#destroy_question"
+  get "/answer/edit/:id" => "board#edit_answer"
+  post "/answer/update/:id" => "board#update_answer"
+  get "/answer/destroy/:id" => "board#destroy_answer"
 
   get "/ai_question" => "ai_question#home"
   post "/question_for_ai" => "ai_question#question_for_ai"

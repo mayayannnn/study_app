@@ -1,12 +1,10 @@
 <%= form_tag("/create_question") do %>
-<div class="form-floating">
-    <textarea name="content" id="set_question" cols="10" rows="30"class="form-control"></textarea>
-    <label for="set_question">問題を入力</label>
+<div>
+  <textarea class="form-control" name="content" cols="20px" rows="3px" required placeholder=問題を入力></textarea>
 </div>
 <br>
-<div class="form-floating">
-    <textarea name="answer" id="set_question" cols="10" rows="30"class="form-control" required></textarea>
-    <label for="set_question">答え、解説を入力</label>
+<div>
+  <textarea class="form-control" name="answer" cols="100%" rows="3px" required placeholder=答え、解説入力></textarea>
 </div>
 <br>
 <select class="form-select" aria-label="Default select example" name="subject" required>

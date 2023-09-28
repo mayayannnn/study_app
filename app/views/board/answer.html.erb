@@ -7,14 +7,24 @@
 <% end %>
 <% @answers.each do |answer| %>
 <h3 class="title-box"> <img src="<%= "/user_images/#{answer.user.image_name}" %>" alt="" width="50px" height="50px"><span class="title-span"><%= answer.user.name%></span>
-    <br><%= answer.answer %></h3>
+    
+    
+    <% if answer.user_id.to_i == session[:user_id].to_i %>
+    　　　　
+    <%= link_to("編集","/answer/edit/#{answer.id}",{method: "post",class:"btn btn-success"})%></td>
+    <%= link_to("削除","/answer/destroy/#{answer.id}",{method: "post",class:"btn btn-danger"}) %>
+   
+    <% end %>
+    
+    <br><%= answer.answer %>
+    </h3>
 <% end %>
+
 <br>
 </h1>
-<div class="form-floating">
-    <textarea name="answer" id="answer" class="form-control" required></textarea>
-    <label for="answer">答える</label>
-</div>
+<div>
+    <textarea class="form-control" name="answer"  cols="100%" rows= "3px" required placeholder=答える></textarea>
+  </div>
 <br>
 
 <input type="hidden" name="board_id" value="<%= @board.id%>">

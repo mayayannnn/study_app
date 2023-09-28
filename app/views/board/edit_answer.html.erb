@@ -1,0 +1,6 @@
+<%= form_tag("/answer/update/#{ @answer.id }") do %>
+<div>
+    <input class="form-control" name="answer"  style="width: 100%; height: 50px;" required placeholder=問題を入力 value="<%= @answer.answer%>">
+  </div>
+<input type="submit" value="変更する" class="btn btn-success">
+<% end %>
