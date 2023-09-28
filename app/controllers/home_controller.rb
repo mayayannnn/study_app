@@ -58,6 +58,7 @@ class HomeController < ApplicationController
       image = params[:image]
       File.binwrite("public/user_images/#{@user.image_name}",image.read)
     end
+    session[:user_name] = @user.name
     @user.save
     redirect_to("/user/#{@user.id}", success: "変更しました")
 

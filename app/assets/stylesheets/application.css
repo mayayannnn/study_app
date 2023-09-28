@@ -303,3 +303,24 @@ textarea {
     margin-left: 80px;
 }
 
+/* アカウント編集 */
+.user_edit{
+    margin-top: 70px;
+    padding-bottom: 30px;
+    margin-left: 400px;
+    margin-right: 500px;
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1); /* 影　*/
+}
+.user_edit h1{
+    margin-left: 100px;
+}
+.user_edit input{
+    margin-left: 80px;
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+}
+.user_edit h2{
+    margin-left: 80px;
+}
