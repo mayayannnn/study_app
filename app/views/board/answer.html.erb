@@ -16,7 +16,7 @@
    
     <% end %>
     
-    <br><%= answer.answer %>
+    <br><%= safe_join(answer.answer.split("\n"),tag(:br)) %>
     </h3>
 <% end %>
 
