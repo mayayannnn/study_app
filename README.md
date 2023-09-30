@@ -25,4 +25,4 @@
     パスワードをハッシュ化して、安全性を高める
     ログインしたときなど、通知が上にでる（flash）
 ##　これがStudy Mate
-## Stusdy Mate(https://study-mate-pew5.onrender.com/home)
+## Stusdy Mate https://study-mate-pew5.onrender.com/home
