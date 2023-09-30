@@ -1,4 +1,5 @@
-<p><%= @contents[0] %>の<%= @contents[1] %>の<%= @contents[2] %>について<%= @contents[3] %>問、問題を出してください</p>
-<%= @chats %>
-<p>答え</p>
-<%= @answer %>
+<h2 class="title-box"><%= @contents[0] %>の<%= @contents[1] %>の<%= @contents[2] %>について<%= @contents[3] %>問、問題を出してください</h2>
+<p class="title-box"><%= safe_join(@chats.split("\n"),tag(:br)) %></p>
+<p class="title-box"><p>答え</p>
+<br>
+<%= safe_join(@answer.split("\n"),tag(:br)) %></p>
