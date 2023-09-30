@@ -13,12 +13,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body  id="top">
-
+    <% if not flash[:notice] %>
     <% flash.each do |key, value| %>
     <p class="alert alert-<%= key %>">
       <%= value %>
       </p>
     <% end %>
+    <% end %>
+    
 
     <header class="header" >
       <ul>

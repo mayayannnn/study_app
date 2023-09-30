@@ -1,29 +1,46 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user,{only: [:user,]}
+  before_action :authenticate_user,{only: [:user]}
   def home
   end
   def create_user
+    if session[:user_id]
+      redirect_to("/home")
+    end
     if params[:password] == params[:password_check]
       @user = User.new(name:params[:name],
       email:params[:email],
       password:params[:password],
       image_name: "default_user.jpg")
       @user.save
+      if @user.save
       session[:user_id] = @user.id
       session[:user_name] = @user.name
       redirect_to home_url, info: "登録しました"
+      else
+        flash[:notice] = "既に同じ名前や、emailの登録があります。変更してください。"
+        redirect_to("/signup?name=#{params[:name]}&email=#{params[:email]}")
+      end
     else
       flash[:notice] = "確認用パスワードが間違っています"
       redirect_to("/signup?name=#{params[:name]}&email=#{params[:email]}")
     end
   end
   def signup
+    if session[:user_id]
+      redirect_to("/home")
+    end
     @name = params[:name]
     @email = params[:email]
   end
   def login
+    if session[:user_id]
+      redirect_to("/home")
+    end
   end
   def login_user
+    if session[:user_id]
+    redirect_to("/home")
+    end
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
