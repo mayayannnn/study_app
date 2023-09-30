@@ -24,4 +24,5 @@
     ログインしていないユーザーが、機能を使えないなどの仕組みがあります。
     パスワードをハッシュ化して、安全性を高める
     ログインしたときなど、通知が上にでる（flash）
-## Stusdy Mate("https://study-mate-pew5.onrender.com/home")
+##　これがStudy Mate
+## Stusdy Mate(https://study-mate-pew5.onrender.com/home)
