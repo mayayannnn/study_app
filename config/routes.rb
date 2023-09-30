@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   get "/ai_question" => "ai_question#home"
   post "/question_for_ai" => "ai_question#question_for_ai"
+  post "/question_for_ai_answer" => "ai_question#question_for_ai_answer"
 
   get "nice/:id/create" => "nice#create"
   get "nice/:id/destroy" => "nice#destroy"

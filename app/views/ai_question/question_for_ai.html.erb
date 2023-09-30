@@ -1,2 +1,11 @@
+<%= form_tag("/question_for_ai_answer") do %>
 <p><%= @contents[0] %>の<%= @contents[1] %>の<%= @contents[2] %>について<%= @contents[3] %>問、問題を出してください</p>
 <%= @chats %>
+<input type="hidden" name="contents_0" value="<%= @contents[0] %>">
+<input type="hidden" name="contents_1" value="<%= @contents[1] %>">
+<input type="hidden" name="contents_2" value="<%= @contents[2] %>">
+<input type="hidden" name="contents_3" value="<%= @contents[3] %>">
+<input type="hidden" name="chats" value="<%= @chats  %>">
+<br>
+<input type="submit" value="答え合わせ" class="btn btn-success">
+<% end %>
